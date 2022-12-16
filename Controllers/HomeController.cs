@@ -4,17 +4,19 @@ using the_spacery.Models;
 
 namespace the_spacery.Controllers
 {
-    public class HomeController : Controller
+    public class ProductController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ProductController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult<Product>> Product()
         {
+
+            var product = new Product();
             return View();
         }
 

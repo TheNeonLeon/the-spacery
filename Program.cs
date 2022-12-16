@@ -1,7 +1,13 @@
+
+using the_spacery.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<SpaceStoreDatabaseSettings>(
+    builder.Configuration.GetSection("BookStoreDatabase"));
 
 var app = builder.Build();
 
